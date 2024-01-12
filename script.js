@@ -20,6 +20,7 @@ function getWeather(lat,lon){
     var weatherUrl=`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${API}`
     fetch(weatherUrl).then(response => response.json()).then(data => {
         console.log(data)
+        console.log('success')
     })
 
 }
