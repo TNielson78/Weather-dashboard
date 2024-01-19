@@ -2,31 +2,49 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: black;
-    color: white;
-    
-}
 
+
+}
 
 
 
 body {
     font-family: sans-serif;
     font: bold;
-    color: white;
+    color: red;
+    background-color: grey;
 
 }
 
 
 
 button {
-    color: white;
+    color: blue;
     border-radius: 0;
     border: 3px solid white;
-    
-    
-    
 
+
+
+
+}
+
+.list .btn-group {
+    background-color: black;
+    border: 1px solid white;
+    color: black;
+    padding: 10px 24px;
+    cursor: pointer;
+    width: 50%;
+    display: inline-flexbox;
+    vertical-align: auto;
+
+}
+
+
+
+
+.btn-group button:hover {
+    background-color: #3e8e41;
 }
 
 
@@ -36,6 +54,23 @@ main {
     max-width: 1300px;
     margin: 0 auto;
     text-align: center;
-    
-    
+
+
+}
+
+.current-weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    ;
+}
+
+.five-day-weather {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+
+
 }

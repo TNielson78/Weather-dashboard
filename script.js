@@ -1,6 +1,7 @@
 var searchHistory = []
 var API = '330f80ef281593b850548bb6ba30d4cf'
 var searchBtn = document.getElementById('searchBtn')
+var fiveDayWeatherEl=document.querySelector(".five-day-weather")
 function getGeolocation(city) {
     var geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API}`
     fetch(geoUrl).then(response => response.json()).then(data => {
