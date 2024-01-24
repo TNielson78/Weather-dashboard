@@ -8,7 +8,7 @@
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css" />
     <title>Weather Dashboard</title>
-    
+
 </head>
 
 <body>
@@ -19,16 +19,18 @@
                     <div id="start" class="text-center">
                         <h1>Weather Dashboard</h1>
                         <div class="card">
-                            <div class="search">
-                                <input type="text" id="city-name" placeholder="Enter city name" spellcheck="false">
-                                <button id="searchBtn">search</button>
-                            </div>
                         </div>
 
-
-
                 </main>
-                <div class="list-group">
+                <div class="search">
+                    <input type="text" id="cityInput" placeholder="Enter city name" spellcheck="false">
+                    <button id="searchBtn">search</button>
+                    <div id="weatherContainer"></div>
+                </div>
+
+
+
+                <!-- <div class="list-group">
                     <button type="button" class="list-group-item list-group-item-action active" aria-current="true">
                         City
                     </button>
@@ -36,18 +38,21 @@
                     <button type="button" class="list-group-item list-group-item-action">City3</button>
                     <button type="button" class="list-group-item list-group-item-action">City4</button>
                     <button type="button" class="list-group-item list-group-item-action">City5</button>
-                </div>
+                </div>-->
             </div>
             <div class="col-8">
-             
-                <div class="weather-container">
-                    <div class="current-weather">
+                <div id="weather-container">
+                    <h2>Current Weather</h2>
+                    <p>Loading...</p>
+                </div>
+                <div class="WEATHER">
+                    <div class="weatherContainer">
                         <div class="card xm-auto " style="width: 55rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">Current Weather</h5>
                                 <p class="card-text">CURRENT DISPLAY OF WEATHER WILL GO HERE!</p>
-                                
+
                             </div>
                         </div>
                     </div>
@@ -57,7 +62,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">DAY-1</h5>
                                 <p class="card-text">ADD WIDGET AND FORCAST</p>
-                                
+
                             </div>
                         </div>
                         <div class="card xm-auto " style="width: 13rem;">
@@ -65,7 +70,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">DAY-2</h5>
                                 <p class="card-text">ADD WIDGET AND FORCAST</p>
-                                
+
                             </div>
                         </div>
                         <div class="card xm-auto" style="width: 13rem;">
@@ -73,30 +78,31 @@
                             <div class="card-body">
                                 <h5 class="card-title">DAY-3</h5>
                                 <p class="card-text">ADD WIDGET AND FORCAST</p>
-                                
+
                             </div>
-                            
+
                         </div>
                         <div class="card xm-auto" style="width: 13rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">DAY-4</h5>
                                 <p class="card-text">ADD WIDGET AND FORCAST</p>
-                               
+
                             </div>
-                            
-                        </div> <div class="card xm-auto" style="width: 13rem;">
+
+                        </div>
+                        <div class="card xm-auto" style="width: 13rem;">
                             <img src="..." class="card-img-top" alt="...">
                             <div class="card-body">
                                 <h5 class="card-title">DAY-5</h5>
                                 <p class="card-text">ADD WIDGET AND FORCAST</p>
-                                
+
                             </div>
-                            
+
                         </div>
                     </div>
                 </div>
-             
+
 
             </div>
 
