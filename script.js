@@ -28,24 +28,11 @@ function getWeather(lat, lon) {
 searchBtn.addEventListener('click', function (event) {
   var cityName = document.getElementById('cityInput').value
   getGeolocation(cityName)
+  displaySearchHistory()
 })
 
-// new code for test from chat gpt
-// Define an array to store previously searched cities
-let searchedCities = [];
 
-// Function to fetch weather data for a city
-async function fetchWeatherData(city) {
-  try {
-    const apiKey = 'https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${API}'; // Replace with your API key
-    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}`);
-    const data = await response.json();
-    return data;
-  } catch (error) {
-    console.error(error);
-    return null;
-  }
-}
+let searchedCities = JSON.parse(localStorage.getItem('search-history')) || []
 
 
 // Function to display weather data
@@ -57,54 +44,70 @@ function displayWeatherData(city, weatherData) {
   // For example: cityElement.innerHTML += `<p>Temperature: ${weatherData.main.temp}°C</p>`;
   weatherContainer.appendChild(cityElement);
 }
+// for (const city of searchedCities) {
+//   fetchWeatherData(city)
+//     .then((weatherData) => {
+//       if (weatherData) {
+//         displayWeatherData(city, weatherData);
+//       }
+//     });
+// }
+function displaySearchHistory() { 
+  var searchHistory=JSON.parse(localStorage.getItem('search-history'))
+  var searchHistoryContainer=document.getElementById("search-history")
+  searchHistoryContainer.innerHTML=""
+  console.log(searchHistory)
+  for (var i=0; i< searchHistory.length; i++){
+    var button=document.createElement("button")
+    button.textContent=searchHistory[i]
+    searchHistoryContainer.appendChild(button)
+  }
+}
+displaySearchHistory()
+
 
 // Event listener for the search button
-document.getElementById('searchBtn').addEventListener('click', async () => {
-  const cityInput = document.getElementById('cityInput');
-  const city = cityInput.value;
-  if (city) {
-    const weatherData = await fetchWeatherData(city);
-    if (weatherData) {
-      searchedCities.push(city);
-      displayWeatherData(city, weatherData);
-    }
-  }
-});
+// document.getElementById('searchBtn').addEventListener('click', async () => {
+//   const cityInput = document.getElementById('cityInput');
+//   const city = cityInput.value;
+//   if (city) {
+//     const weatherData = await fetchWeatherData(city);
+//     if (weatherData) {
+//       searchedCities.push(city);
+//       displayWeatherData(city, weatherData);
+//     }
+//   }
+// });
 
 // Loop through previously searched cities and display weather data
-for (const city of searchedCities) {
-  fetchWeatherData(city)
-    .then((weatherData) => {
-      if (weatherData) {
-        displayWeatherData(city, weatherData);
-      }
-    });
-}
 
-        // Test code for current weather conditions.........
-  const apiKey = '330f80ef281593b850548bb6ba30d4cf'
-  const city = 'Salt lake'; // Replace with the desired city
 
-  const weatherContainer = document.getElementById('weather-container');
+// Test code for current weather conditions.........
+// const apiKey = '330f80ef281593b850548bb6ba30d4cf'
+// const city = 'city'; // Replace with the desired city
 
-  // Api request
-  fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${API}`)
-            .then(response => response.json())
-            .then(data => {
-                // Extract relevant weather information from the API response
-                const temperature = data.main.temp;
-  const conditions = data.weather[0].description;
+// const weatherContainer = document.getElementById('weather-container');
 
-  // weather container update function
-  weatherContainer.innerHTML = `
-  <h2>Current Weather in ${city}</h2>
-  <p>Temperature: ${temperature}°C</p>
-  <p>Conditions: ${conditions}</p>
-  `;
-            })
-            .catch(error => {
-    console.error('Error fetching weather data:', error);
-  weatherContainer.innerHTML = 'Error fetching weather data';
-            });
+// // Api request
+// const weatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API}`;
+// fetch(weatherUrl)
+//   .then(response => response.json())
+//   .then(data => {
+//     // Extract relevant weather information from the API response
+//     const temperature = data.main.temp;
+//     const conditions = data.weather[0].description;
+
+//     // weather container update function
+//     weatherContainer.innerHTML = `
+//   <h2>Current Weather in ${city}</h2>
+//   <p>Temperature: ${temperature}°C</p>
+//   <p>Conditions: ${conditions}</p>
+//   `;
+//   })
+//   .catch(error => {
+//     console.error('Error fetching weather data:', error);
+//     weatherContainer.innerHTML = 'Error fetching weather data';
+//   });
+
 
 
