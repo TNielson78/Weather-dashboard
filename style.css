@@ -7,7 +7,6 @@
 }
 
 
-
 body {
     font-family: sans-serif;
     font: bold;
@@ -22,6 +21,9 @@ button {
     color: blue;
     border-radius: 0;
     border: 3px solid white;
+    vertical-align: left;
+    display: block;
+
 
 
 
@@ -47,16 +49,14 @@ button {
     background-color: #3e8e41;
 }
 
-
-
-main {
+/* main {
     border: 1px solid black;
     max-width: 1300px;
     margin: 0 auto;
     text-align: center;
 
 
-}
+} */
 
 .current-weather {
     display: flex;
