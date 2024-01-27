@@ -42,8 +42,8 @@ function getWeather(lat, lon) {
   getforecast(lat, lon)
 }
 function getforecast(lat, lon) {
-  document.querySelector('.five-day-weather').innerHTML =''
-  var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API}`
+  document.querySelector('.five-day-weather').innerHTML = ''
+  var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API}&units=imperial`
   fetch(forecastUrl).then(response => response.json()).then(data => {
     console.log(data)
     var forecastarray = []
