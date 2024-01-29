@@ -18,6 +18,7 @@ HTML/CSS/Javascript/Weather API
 ## Credits
 
 Tutors and Research online.
+openweathermap.org (Web Api)
 
 ## Features
 
