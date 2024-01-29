@@ -6,7 +6,7 @@ Daily weather dashboard
 
 ## Motivation
 
-This Project was inspired by my instructors as a class project to help develop my coding skills and begin developing a Weather dashboard.
+This Project was Directed by my instructors as a class project to help develop my coding skills and begin developing a Weather dashboard.
 ## Build status
 
 May add some different features and styling in future builds.
