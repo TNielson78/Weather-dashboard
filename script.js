@@ -65,7 +65,7 @@ function getforecast(lat, lon) {
       var pwind = document.createElement('p')
       pwind.textContent = 'windspeed: ' + windspeed
       var cardDiv = document.createElement('div')
-      cardDiv.setAttribute('class', 'card xm-5')
+      cardDiv.setAttribute('class', 'card xm-5 ')
       cardDiv.setAttribute('style', "width: 13rem;")
       var cardBody = document.createElement('div')
       cardBody.setAttribute('class', 'card-body')
@@ -112,6 +112,7 @@ function displaySearchHistory() {
   searchHistoryContainer.innerHTML = ""
   for (var i = 0; i < searchedCities.length; i++) {
     var button = document.createElement("button")
+    button.classList.add('searchHistoryBtn')
     button.textContent = searchedCities[i]
     button.setAttribute('value', searchedCities[i])
     button.addEventListener('click', function () {
