@@ -6,7 +6,7 @@ Daily weather dashboard
 
 ## Motivation
 
-This Portfolio was inspired by my instructors as a class project to help develop my coding skills and begin developing a Weather dashboard.
+This Project was Directed by my instructors as a class project to help develop my coding skills and begin developing a Weather dashboard.
 ## Build status
 
 May add some different features and styling in future builds.
@@ -27,6 +27,12 @@ Weather display by city with ability to click a button for previous cities searc
 ## Installation
 
 No installation necessary should be compatible with most popular browsers.
+
+##Screenshots
+
+![weather](https://github.com/TNielson78/Weather-dashboard/assets/147010160/12741ba4-4e3f-408d-8824-397faa331474)
+
+![weather2](https://github.com/TNielson78/Weather-dashboard/assets/147010160/b47153cd-58d1-4e79-b5de-6e2601d912c2)
 
 
 ## License
