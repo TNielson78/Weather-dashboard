@@ -1,5 +1,5 @@
 let searchedCities = JSON.parse(localStorage.getItem('search-history')) || []
-// User specific api Key..
+// User specific api Key for api call
 var API = '330f80ef281593b850548bb6ba30d4cf'
 var searchBtn = document.getElementById('searchBtn')
 var fiveDayWeatherEl = document.querySelector(".five-day-weather")
@@ -21,9 +21,11 @@ function getGeolocation(city) {
 // Lat and Lon added so weather can be city specific
 function getWeather(lat, lon) {
   document.getElementById('current-weather').innerHTML = ''
+  // Current weather API
   var weatherUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${API}`
   fetch(weatherUrl).then(response => response.json()).then(data => {
     console.log(data)
+    // specific labeling for calling temp, humidity, and windspeed 
     var temp = data.main.temp
     var ptemp = document.createElement('p')
     ptemp.textContent = 'temperature: ' + temp;
@@ -37,10 +39,12 @@ function getWeather(lat, lon) {
     console.log(windspeed)
     document.getElementById('current-weather').append(ptemp, phum, pwind)
     document.getElementById('current-city').textContent = data.name
+    // search history display
     displaySearchHistory()
   })
   getforecast(lat, lon)
 }
+// 5 day forecast api 
 function getforecast(lat, lon) {
   document.querySelector('.five-day-weather').innerHTML = ''
   var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API}&units=imperial`
@@ -54,6 +58,7 @@ function getforecast(lat, lon) {
       }
     }
     console.log(forecastarray)
+    // For loop and code for 5day forecast, display cards.
     for (var i = 0; i < forecastarray.length; i++) {
       var temp = forecastarray[i].main.temp
       var ptemp = document.createElement('p')
@@ -76,14 +81,6 @@ function getforecast(lat, lon) {
       cardDiv.append(cardBody)
       document.querySelector('.five-day-weather').append(cardDiv)
     }
-
-
-
-
-    // console.log(windspeed)   
-    // document.getElementById('current-weather').append(ptemp,phum,pwind)
-    // document.getElementById('current-city').textContent= data.name
-
   })
 }
 // Button added that also logs previous city and displays
@@ -92,22 +89,8 @@ searchBtn.addEventListener('click', function (event) {
   getGeolocation(cityName)
   // displaySearchHistory()
 })
-
-
-
-
-
-// Function to display weather data
-// function displayWeatherData(city, weatherData) {
-//   const weatherContainer = document.getElementById('weatherContainer');
-//   const cityElement = document.createElement('div');
-//   cityElement.innerHTML = `<h2>${city}</h2>`;
-//   weatherContainer.appendChild(cityElement);
-
-// 
-
 function displaySearchHistory() {
-  // var searchHistory = JSON.parse(localStorage.getItem('search-history'))
+
   var searchHistoryContainer = document.getElementById("search-history")
   searchHistoryContainer.innerHTML = ""
   for (var i = 0; i < searchedCities.length; i++) {

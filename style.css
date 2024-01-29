@@ -30,15 +30,21 @@ body {
     background: none;
 
 
+    /* Card and button styling  */
+
+
 }
+
 .card {
     background-color: aqua;
 }
+
 .searchHistoryBtn {
     background-color: greenyellow;
 
 }
+
 #searchBtn {
     background-color: yellow;
-    
+
 }
