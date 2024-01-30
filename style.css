@@ -39,8 +39,8 @@ body {
     background-color: aqua;
     flex-wrap: wrap;
     justify-content: center;
-    width: 100%;
-    margin: 10px 0;
+    width: auto;
+    margin: 0;
 }
 
 .searchHistoryBtn {
