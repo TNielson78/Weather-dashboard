@@ -4,7 +4,7 @@ var API = '330f80ef281593b850548bb6ba30d4cf'
 var searchBtn = document.getElementById('searchBtn')
 var fiveDayWeatherEl = document.querySelector(".five-day-weather")
 function getGeolocation(city) {
-  var geoUrl = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API}`
+  var geoUrl = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=5&appid=${API}`
   fetch(geoUrl).then(response => response.json()).then(data => {
 
     var lat = data[0].lat
@@ -47,7 +47,7 @@ function getWeather(lat, lon) {
 // 5 day forecast api 
 function getforecast(lat, lon) {
   document.querySelector('.five-day-weather').innerHTML = ''
-  var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API}&units=imperial`
+  var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=${API}&units=imperial`
   fetch(forecastUrl).then(response => response.json()).then(data => {
     console.log(data)
     var forecastarray = []
@@ -87,7 +87,6 @@ function getforecast(lat, lon) {
 searchBtn.addEventListener('click', function (event) {
   var cityName = document.getElementById('cityInput').value
   getGeolocation(cityName)
-  // displaySearchHistory()
 })
 function displaySearchHistory() {
 
