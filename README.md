@@ -1,4 +1,6 @@
 # Weather-dashboard
+Site URL # https://tnielson78.github.io/Weather-dashboard/
+Repo URL # https://github.com/TNielson78/Weather-dashboard
 
 ## Description
 
