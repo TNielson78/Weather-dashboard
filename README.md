@@ -29,6 +29,8 @@ Weather display by city with ability to click a button for previous cities searc
 ## Installation
 
 No installation necessary should be compatible with most popular browsers.
+## Future Develeopment
+Would like to add more styling and some weather based Icons.
 
 ##Screenshots
 
